@@ -1,4 +1,19 @@
-﻿const { createApp, ref, computed, watch, onMounted } = Vue;
+﻿const firebaseConfig = {
+  apiKey: "AIzaSyB0uIxdiHbKPQ_msqIPWDEyyq0KHhUPJVA",
+  authDomain: "baraban-15164.firebaseapp.com",
+  databaseURL: "https://baraban-15164-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "baraban-15164",
+  storageBucket: "baraban-15164.firebasestorage.app",
+  messagingSenderId: "836479526930",
+  appId: "1:836479526930:web:9312fa9f8e3b5c0d80d0cb",
+  measurementId: "G-K615WMWKV8"
+};
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+const db = firebase.database();
+
+const { createApp, ref, computed, watch, onMounted } = Vue;
 
 const app = createApp({
     setup() {
@@ -18,24 +33,26 @@ const app = createApp({
         const newEvent = ref({ type: 'goal', playerId: '', minute: '', assistPlayerId: '' });
 
         // Load Data
-        const loadData = () => {
-            const t = localStorage.getItem('uniliga_teams');
-            const p = localStorage.getItem('uniliga_players');
-            const s = localStorage.getItem('uniliga_schedule');
-            
-            if (t) teams.value = JSON.parse(t);
-            if (p) players.value = JSON.parse(p);
-            if (s) {
-                schedule.value = JSON.parse(s);
-                generated.value = schedule.value.length > 0;
-            }
+                const loadData = () => {
+            db.ref('uniliga').on('value', snap => {
+                const data = snap.val();
+                if(data) {
+                    teams.value = data.teams || [];
+                    players.value = data.players || [];
+                    schedule.value = data.schedule || [];
+                    generated.value = data.generated || false;
+                }
+            });
         };
 
         // Save Data
-        const saveData = () => {
-            localStorage.setItem('uniliga_teams', JSON.stringify(teams.value));
-            localStorage.setItem('uniliga_players', JSON.stringify(players.value));
-            localStorage.setItem('uniliga_schedule', JSON.stringify(schedule.value));
+                const saveData = () => {
+            db.ref('uniliga').set({
+                teams: JSON.parse(JSON.stringify(teams.value)),
+                players: JSON.parse(JSON.stringify(players.value)),
+                schedule: JSON.parse(JSON.stringify(schedule.value)),
+                generated: generated.value
+            });
         };
 
         // Watchers
@@ -316,5 +333,6 @@ app.component('custom-select', {
 });
 
 app.mount('#app');
+
 
 
