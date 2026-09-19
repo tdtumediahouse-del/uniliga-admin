@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TDTU MINI LIGA - ADMIN</title>
+    <link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAcFBQYFBAcGBQYIBwcIChELCgkJChUPEAwRGBUaGRgVGBcbHichGx0lHRcYIi4iJSgpKywrGiAvMy8qMicqKyr/2wBDAQcICAoJChQLCxQqHBgcKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKir/wAARCAAgACADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oAMBAAIRAxEAPwD3zX/EFl4c043d+xO47Yol5aVuwArz9fFHjjxPF9r0KGDT7KT/AFTzAKG5wPmYEnv90Y96x/iDqhvfiWbW7gkm0/T41UjO2Njs3mMt2LcL0+6TUl/rV74rns7WPT2jWB96x2zMenO7aBk7QDhRWEpXZxVJuTavp5GpPrfj3QF+13Plalao371RsYIvqSAGAxznGK7nwv4psvFOnfaLT93LHgTQMclCen1B7HvXmVtrGo+HtXn1FrWaX+0EWUm43xeZno+wjKkEMB6ioPCmrmy+JtrLYW7QWeofu5Yo+Y4i5PyZwMfMNwHYNjoKE7McJ8rSuM+JWhvF49uriOEGe8SKe2Yk4fYNrLgd+/rwKraALeKYNYE3sV5FJtd7lxNbxyMsDmLGdpD4XcwGACSFGa9e8XeFLPxdozWV07wyrloLiMkNE3sRg4Pcf4CvF77wN4u0OWS3XSYrxCT5c8ERePbzkbVGVyTk8cnnAolFp3QqlNqXMkOvZLS/060sbNbn7JbWqYvI7ky3YhLSSHzCCqkAwyYx0xjPzDNjwLo32/xtpsscZ3JKbwtlvlhUfJnOOpI6gdulUdM8B+LNRk+yx6WbaNjtaaZWjUx91fcPnBHVQDXtHg7wfaeEdLMELme6l5nuG/iP90eijJwKUYtu7CnTcmm0f//Z">
+    <title>ADMIN - TDTU MINI LIGA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -12,164 +13,240 @@
 </head>
 <body class="bg-gray-100 min-h-screen text-gray-800">
 
-    <!-- DESKTOP BLOCKER -->
     <div id="desktop-block">
         <div class="logo-badge-lg"></div>
         <h1>TDTU MINI LIGA</h1>
         <p>Admin panel faqat mobil qurilmalar uchun</p>
-        <div class="phone-icon">
-            <i class="fas fa-mobile-alt"></i>
-        </div>
+        <div class="phone-icon"><i class="fas fa-mobile-alt"></i></div>
         <h2>Iltimos, telefoningizda oching</h2>
-        <span class="qr-hint">Brauzeringiz orqali shu havolani telefoningizga yuboring</span>
     </div>
 
-    <!-- MOBILE APP -->
-    <div id="app" v-cloak class="mobile-app">
+    <div id="app" v-cloak class="mobile-app relative pb-20">
         <!-- Header -->
         <header class="bg-white text-gray-800 sticky top-0 z-20 shadow-sm border-b border-gray-200">
             <div class="flex justify-between items-center p-4">
                 <div class="flex items-center gap-3">
                     <div class="logo-badge"></div>
                     <div>
-                        <h1 class="text-xl font-bold tracking-wide text-[#008000]">ADMIN PANEL</h1>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest">TDTU MINI LIGA</p>
+                        <h1 class="text-xl font-bold tracking-wide text-[#008000]">TDTU ADMIN</h1>
                     </div>
                 </div>
             </div>
             
-            <!-- Navigation -->
-            <div class="flex text-sm font-medium bg-gray-50 border-b border-gray-200">
-                <button @click="currentTab = 'matches'" class="flex-1 py-3 text-center transition duration-200 relative" :class="currentTab === 'matches' ? 'text-[#008000] font-bold' : 'text-gray-500'">
+            <div class="flex overflow-x-auto hide-scrollbar text-sm font-medium bg-gray-50 border-b border-gray-200">
+                <button @click="currentTab = 'teams'" class="px-4 py-3 whitespace-nowrap transition duration-200 relative" :class="currentTab === 'teams' ? 'text-[#008000] font-bold' : 'text-gray-500'">
+                    Jamoalar
+                    <div v-if="currentTab === 'teams'" class="absolute bottom-0 left-0 w-full h-0.5 bg-[#008000]"></div>
+                </button>
+                <button @click="currentTab = 'players'" class="px-4 py-3 whitespace-nowrap transition duration-200 relative" :class="currentTab === 'players' ? 'text-[#008000] font-bold' : 'text-gray-500'">
+                    O'yinchilar
+                    <div v-if="currentTab === 'players'" class="absolute bottom-0 left-0 w-full h-0.5 bg-[#008000]"></div>
+                </button>
+                <button @click="currentTab = 'schedule'" class="px-4 py-3 whitespace-nowrap transition duration-200 relative" :class="currentTab === 'schedule' ? 'text-[#008000] font-bold' : 'text-gray-500'">
+                    Kalendar
+                    <div v-if="currentTab === 'schedule'" class="absolute bottom-0 left-0 w-full h-0.5 bg-[#008000]"></div>
+                </button>
+                <button @click="currentTab = 'matches'" class="px-4 py-3 whitespace-nowrap transition duration-200 relative" :class="currentTab === 'matches' ? 'text-[#008000] font-bold' : 'text-gray-500'">
                     Natijalar
                     <div v-if="currentTab === 'matches'" class="absolute bottom-0 left-0 w-full h-0.5 bg-[#008000]"></div>
-                </button>
-                <button @click="currentTab = 'scorers'" class="flex-1 py-3 text-center transition duration-200 relative" :class="currentTab === 'scorers' ? 'text-[#008000] font-bold' : 'text-gray-500'">
-                    To'purarlar
-                    <div v-if="currentTab === 'scorers'" class="absolute bottom-0 left-0 w-full h-0.5 bg-[#008000]"></div>
-                </button>
-                <button @click="currentTab = 'table'" class="flex-1 py-3 text-center transition duration-200 relative" :class="currentTab === 'table' ? 'text-[#008000] font-bold' : 'text-gray-500'">
-                    Jadval
-                    <div v-if="currentTab === 'table'" class="absolute bottom-0 left-0 w-full h-0.5 bg-[#008000]"></div>
                 </button>
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main class="flex-1 mt-3 pb-6">
+        <main class="p-2">
             
-            <!-- MATCHES ADMIN -->
-            <div v-show="currentTab === 'matches'" class="animate-fade-in px-2">
-                <div class="mb-4 bg-white rounded-lg p-4 shadow-sm border border-gray-200 border-l-4 border-l-[#008000]">
-                    <h3 class="font-bold text-gray-800 mb-3 text-sm">YANGI O'YIN KIRITISH</h3>
-                    <div class="space-y-2 mb-3">
-                        <select v-model="newMatch.team1" class="w-full border border-gray-300 rounded p-2 text-sm bg-gray-50 focus:border-[#008000] outline-none">
-                            <option value="">Uy jamoasi...</option>
-                            <option v-for="t in teams" :value="t.id">{{ t.name }}</option>
-                        </select>
-                        <select v-model="newMatch.team2" class="w-full border border-gray-300 rounded p-2 text-sm bg-gray-50 focus:border-[#008000] outline-none">
-                            <option value="">Mehmon jamoasi...</option>
-                            <option v-for="t in teams" :value="t.id">{{ t.name }}</option>
-                        </select>
+            <!-- 1. JAMOALAR -->
+            <div v-show="currentTab === 'teams'" class="animate-fade-in">
+                <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200 mb-4">
+                    <h3 class="font-bold text-gray-800 mb-3 text-sm">YANGI JAMOA QO'SHISH ({{teams.length}}/10)</h3>
+                    <input type="text" v-model="newTeam.name" placeholder="To'liq nomi (Masalan: IT-Fayz)" class="w-full border rounded p-2 mb-2 text-sm bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                    <input type="text" v-model="newTeam.shortName" placeholder="Qisqartma (Masalan: ITF)" class="w-full border rounded p-2 mb-2 text-sm bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                    <input type="text" v-model="newTeam.faculty" placeholder="Fakultet (Ixtiyoriy)" class="w-full border rounded p-2 mb-2 text-sm bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                    <div class="flex items-center gap-2 mb-3">
+                        <label class="text-xs text-gray-500">Jamoa rangi:</label>
+                        <input type="color" v-model="newTeam.color" class="border-0 w-8 h-8 rounded cursor-pointer">
                     </div>
-                    <div class="flex justify-center items-center gap-3 mb-3">
-                        <input type="number" v-model="newMatch.score1" class="w-16 border border-gray-300 rounded p-2 text-center text-xl font-bold focus:border-[#008000] outline-none" min="0">
-                        <span class="text-gray-400 font-bold">:</span>
-                        <input type="number" v-model="newMatch.score2" class="w-16 border border-gray-300 rounded p-2 text-center text-xl font-bold focus:border-[#008000] outline-none" min="0">
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <label class="flex items-center gap-2 text-xs text-gray-600">
-                            <input type="checkbox" v-model="newMatch.isTechnical"> Texnik (3:0)
-                        </label>
-                        <button @click="addMatch" class="bg-[#008000] text-white px-5 py-2 rounded text-sm font-bold shadow-sm">SAQLASH</button>
-                    </div>
+                    <button @click="addTeam" class="w-full bg-[#008000] text-white py-2 rounded text-sm font-bold">QO'SHISH</button>
                 </div>
 
-                <div class="space-y-3">
-                    <div v-for="(match, i) in matches.slice().reverse()" :key="i" class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                        <div class="bg-gray-50 border-b border-gray-100 py-1.5 px-3 text-xs text-gray-500 flex justify-between font-medium">
-                            <span>TUR {{ matches.length - i }}</span>
-                            <button @click="deleteMatch(matches.length - 1 - i)" class="text-red-500"><i class="fas fa-trash"></i> O'chirish</button>
+                <div class="grid grid-cols-2 gap-2">
+                    <div v-for="t in teams" :key="t.id" class="bg-white p-3 rounded-lg border flex flex-col justify-between" :style="'border-top: 4px solid ' + t.color">
+                        <div>
+                            <div class="font-bold text-sm">{{t.name}}</div>
+                            <div class="text-xs text-gray-500">{{t.faculty || '-'}}</div>
                         </div>
-                        <div class="p-3">
-                            <div class="flex justify-between items-center mb-1">
-                                <span class="text-[15px]">{{ getTeamName(match.team1) }}</span>
-                                <span class="text-lg font-bold">{{ match.score1 }}</span>
+                        <button @click="deleteTeam(t.id)" class="text-red-500 text-xs mt-2 text-right"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. O'YINCHILAR -->
+            <div v-show="currentTab === 'players'" class="animate-fade-in">
+                <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200 mb-4">
+                    <h3 class="font-bold text-gray-800 mb-3 text-sm">O'YINCHI RO'YKHATGA OLISH</h3>
+                    <custom-select class="mb-2" v-model="newPlayer.teamId" :options="teamOptions" placeholder="Jamoani tanlang..."></custom-select>
+                    <div class="flex gap-2 mb-2">
+                        <input type="text" v-model="newPlayer.firstName" placeholder="Ism" class="w-1/2 border rounded p-2 text-sm bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                        <input type="text" v-model="newPlayer.lastName" placeholder="Familiya" class="w-1/2 border rounded p-2 text-sm bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                    </div>
+                    <div class="flex gap-2 mb-2">
+                        <input type="number" v-model="newPlayer.number" placeholder="Raqam" class="w-1/3 border rounded p-2 text-sm bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                        <div class="w-2/3"><custom-select v-model="newPlayer.position" :options="positionOptions" placeholder="Amplua"></custom-select></div>
+                    </div>
+                    <div class="flex gap-2 mb-3">
+                        <input type="text" v-model="newPlayer.faculty" placeholder="Fakultet" class="w-2/3 border rounded p-2 text-sm bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                        <input type="number" v-model="newPlayer.course" placeholder="Kurs" class="w-1/3 border rounded p-2 text-sm bg-white text-gray-900 focus:outline-none focus:border-[#008000]" min="1" max="4">
+                    </div>
+                    <button @click="addPlayer" class="w-full bg-[#008000] text-white py-2 rounded text-sm font-bold">QO'SHISH</button>
+                </div>
+
+                <div v-for="t in teams" :key="'p'+t.id" class="mb-4">
+                    <h4 class="font-bold text-gray-700 bg-gray-200 px-2 py-1 rounded mb-2 text-sm">{{t.name}}</h4>
+                    <div class="bg-white rounded border overflow-hidden">
+                        <div v-for="p in getTeamPlayers(t.id)" class="flex justify-between items-center p-2 border-b last:border-0 text-sm">
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded bg-gray-100 flex items-center justify-center font-bold text-xs">{{p.number || '-'}}</span>
+                                <span>{{p.firstName}} {{p.lastName}}</span>
+                                <span class="text-[10px] bg-gray-200 px-1 rounded">{{p.position}}</span>
                             </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-[15px]">{{ getTeamName(match.team2) }}</span>
-                                <span class="text-lg font-bold">{{ match.score2 }}</span>
+                            <button @click="deletePlayer(p.id)" class="text-red-500"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. KALENDAR (AVTOMATIK) -->
+            <div v-show="currentTab === 'schedule'" class="animate-fade-in">
+                
+                <div v-if="!generated" class="bg-white rounded-lg p-4 shadow-sm border border-gray-200 text-center">
+                    <i class="fas fa-calendar-alt text-4xl text-[#008000] mb-3"></i>
+                    <h3 class="font-bold text-lg mb-2">Avtomatik Jadval Tuzish</h3>
+                    <p class="text-sm text-gray-500 mb-4">"Circle Method" orqali {{teams.length}} ta jamoa uchun o'yinlar taqvimi avtomatik yaratiladi.</p>
+                    
+                    <div class="text-left mb-4">
+                        <label class="block text-xs font-bold mb-1">1-tur boshlanish sanasi (Shanbani tanlang):</label>
+                        <input type="date" v-model="startDate" class="w-full border p-2 rounded bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                    </div>
+
+                    <button @click="generateSchedule" class="bg-[#008000] text-white px-6 py-2 rounded font-bold w-full" :disabled="teams.length < 2">
+                        JADVAL YARATISH
+                    </button>
+                </div>
+
+                <div v-else>
+                    <button @click="resetSchedule" class="text-red-500 text-sm font-bold mb-4 w-full bg-white p-2 rounded border border-red-200 shadow-sm">
+                        <i class="fas fa-exclamation-triangle"></i> JADVALNI QAYTA YARATISH (O'CHIRISH)
+                    </button>
+
+                    <div v-for="round in schedule" :key="round.round" class="mb-4 bg-white rounded-lg shadow-sm border overflow-hidden">
+                        <div class="bg-gray-100 font-bold p-2 text-sm border-b">{{round.round}}-TUR</div>
+                        <div v-for="m in round.matches" class="p-3 border-b last:border-0 text-sm flex justify-between items-center">
+                            <div class="flex-1 text-right">{{getTeamName(m.team1)}}</div>
+                            <div class="px-2 text-xs text-gray-400 font-mono">
+                                <div>{{m.date}}</div>
+                                <div>{{m.time}}</div>
+                            </div>
+                            <div class="flex-1 text-left">{{getTeamName(m.team2)}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. NATIJALAR & MATCH DETAILS -->
+            <div v-show="currentTab === 'matches'" class="animate-fade-in">
+                
+                <div v-if="!generated" class="text-center p-8 text-gray-400">
+                    Avval kalendarni yarating
+                </div>
+                
+                <!-- Match List -->
+                <div v-else-if="!activeMatchDetails">
+                    <div v-for="round in schedule" :key="'r'+round.round" class="mb-4">
+                        <div class="text-xs font-bold text-gray-500 mb-2 px-1 uppercase tracking-wider">{{round.round}}-TUR</div>
+                        <div class="space-y-2">
+                            <div v-for="m in round.matches" @click="openMatchDetails(m)" class="bg-white rounded-lg p-3 shadow-sm border border-gray-200 flex items-center justify-between cursor-pointer">
+                                
+                                <div class="w-1/3 text-right font-medium text-sm truncate px-1" :class="{'font-bold': m.score1 > m.score2}">
+                                    {{getTeamName(m.team1)}}
+                                </div>
+                                
+                                <div class="w-1/3 text-center">
+                                    <div v-if="m.status === 'pending'" class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded">
+                                        {{m.date}}<br>{{m.time}}
+                                    </div>
+                                    <div v-else class="text-lg font-bold bg-[#008000] text-white px-3 py-1 rounded">
+                                        {{m.score1}} - {{m.score2}}
+                                    </div>
+                                </div>
+                                
+                                <div class="w-1/3 text-left font-medium text-sm truncate px-1" :class="{'font-bold': m.score2 > m.score1}">
+                                    {{getTeamName(m.team2)}}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- SCORERS ADMIN -->
-            <div v-show="currentTab === 'scorers'" class="animate-fade-in px-2">
-                <div class="mb-4 bg-white rounded-lg p-4 shadow-sm border border-gray-200 border-l-4 border-l-[#008000]">
-                    <h3 class="font-bold text-gray-800 mb-3 text-sm">GOL KIRITISH</h3>
-                    <div class="space-y-2">
-                        <input type="text" v-model="newScorer.name" placeholder="O'yinchi ism-familiyasi..." class="w-full border border-gray-300 rounded p-2 text-sm bg-gray-50 focus:border-[#008000] outline-none">
-                        <select v-model="newScorer.team" class="w-full border border-gray-300 rounded p-2 text-sm bg-gray-50 focus:border-[#008000] outline-none">
-                            <option value="">Jamoani tanlang...</option>
-                            <option v-for="t in teams" :value="t.id">{{ t.name }}</option>
-                        </select>
-                        <div class="flex gap-2">
-                            <input type="number" v-model="newScorer.goals" class="flex-1 border border-gray-300 rounded p-2 text-center font-bold focus:border-[#008000] outline-none" placeholder="Gol" min="1">
-                            <button @click="addGoals" class="bg-[#008000] text-white px-6 py-2 rounded text-sm font-bold shadow-sm">QO'SHISH</button>
+                <!-- Active Match Details Admin -->
+                <div v-else class="bg-white rounded-lg shadow-sm border min-h-[70vh]">
+                    <div class="bg-gray-100 p-2 flex justify-between items-center border-b rounded-t-lg">
+                        <button @click="activeMatchDetails = null" class="text-gray-600 px-3 py-1 bg-white rounded shadow-sm text-sm"><i class="fas fa-arrow-left"></i> Orqaga</button>
+                        <span class="text-xs font-bold text-gray-500">{{activeMatchDetails.date}}</span>
+                    </div>
+
+                    <!-- Score Input -->
+                    <div class="p-4 border-b text-center">
+                        <div class="flex justify-center items-center gap-4 mb-4">
+                            <div class="w-1/3 text-right font-bold">{{getTeamName(activeMatchDetails.team1)}}</div>
+                            <div class="flex gap-2 items-center">
+                                <input type="number" v-model="activeMatchDetails.score1" class="w-12 h-12 text-center text-xl font-bold border rounded bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                                <span>-</span>
+                                <input type="number" v-model="activeMatchDetails.score2" class="w-12 h-12 text-center text-xl font-bold border rounded bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                            </div>
+                            <div class="w-1/3 text-left font-bold">{{getTeamName(activeMatchDetails.team2)}}</div>
+                        </div>
+                        
+                        <div class="flex gap-2 justify-center mb-2">
+                            <button @click="finishMatch(activeMatchDetails)" class="bg-[#008000] text-white px-4 py-1.5 rounded text-sm font-bold w-1/2">YAKUNLASH</button>
+                            <button @click="resetMatch(activeMatchDetails)" class="bg-gray-200 text-gray-700 px-4 py-1.5 rounded text-sm font-bold w-1/2">BEKOR QILISH</button>
+                        </div>
+                        <div class="flex gap-2 justify-center">
+                            <button @click="setTechnical(activeMatchDetails, 1)" class="text-xs text-red-500 border border-red-200 px-2 py-1 rounded">T1 Texnik G'alaba</button>
+                            <button @click="setTechnical(activeMatchDetails, 2)" class="text-xs text-red-500 border border-red-200 px-2 py-1 rounded">T2 Texnik G'alaba</button>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Events Add -->
+                    <div class="p-4 bg-gray-50 border-b">
+                        <h4 class="font-bold text-xs mb-2">HODISA QO'SHISH (GOL / KARTA)</h4>
+                        <div class="flex gap-2 mb-2">
+                            <input type="number" v-model="newEvent.minute" placeholder="Daq" class="w-16 border rounded p-2 text-sm text-center bg-white text-gray-900 focus:outline-none focus:border-[#008000]">
+                            <div class="flex-1"><custom-select v-model="newEvent.type" :options="eventTypeOptions" placeholder="Hodisa turini tanlang"></custom-select></div>
+                        </div>
+                        <custom-select class="mb-2" v-model="newEvent.playerId" :options="eventPlayerOptions" placeholder="O'yinchini tanlang..."></custom-select>
+                        <custom-select class="mb-2" v-if="newEvent.type === 'goal'" v-model="newEvent.assistPlayerId" :options="eventAssistOptions" placeholder="Assistent (Ixtiyoriy)..."></custom-select>
+                        <button @click="addEvent" class="w-full bg-blue-600 text-white py-2 rounded text-sm font-bold">HODISA QO'SHISH</button>
+                    </div>
+
+                    <!-- Events List -->
+                    <div class="p-2">
+                        <div v-for="e in activeMatchDetails.events" :key="e.id" class="flex justify-between items-center text-sm p-2 border-b border-dashed">
+                            <div>
+                                <span class="font-bold w-6 inline-block">{{e.minute}}'</span>
+                                <span v-if="e.type === 'goal'">âš½ {{getPlayerName(e.playerId)}} <span v-if="e.assistPlayerId" class="text-xs text-gray-500">({{getPlayerName(e.assistPlayerId)}})</span></span>
+                                <span v-if="e.type === 'yellowCard'">ðŸŸ¨ {{getPlayerName(e.playerId)}}</span>
+                                <span v-if="e.type === 'redCard'">ðŸŸ¥ {{getPlayerName(e.playerId)}}</span>
+                            </div>
+                            <button @click="removeEvent(e.id)" class="text-red-500 p-1"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200">
-                    <table class="w-full text-sm text-left">
-                        <tbody class="divide-y divide-gray-100">
-                            <tr v-for="(scorer, index) in sortedScorers" :key="scorer.id">
-                                <td class="px-3 py-3 w-8 text-center text-gray-400 text-xs">{{ index + 1 }}</td>
-                                <td class="px-3 py-3">
-                                    <div class="font-bold text-gray-800">{{ scorer.name }}</div>
-                                    <div class="text-[11px] text-gray-500">{{ getTeamName(scorer.team) }}</div>
-                                </td>
-                                <td class="px-3 py-3 text-center font-bold text-[#008000]">{{ scorer.goals }}</td>
-                                <td class="px-3 py-3 text-right">
-                                    <button @click="deleteScorer(scorer.id)" class="text-red-500 p-1"><i class="fas fa-times"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
 
-            <!-- TABLE CHECK -->
-            <div v-show="currentTab === 'table'" class="animate-fade-in px-2">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                    <table class="w-full text-[13px] text-left whitespace-nowrap">
-                        <thead class="text-gray-500 bg-gray-50 border-b border-gray-200">
-                            <tr>
-                                <th class="px-2 py-2 w-8 text-center font-normal">#</th>
-                                <th class="px-2 py-2 font-normal">Jamoa</th>
-                                <th class="px-1 py-2 text-center font-normal">O'</th>
-                                <th class="px-1 py-2 text-center font-normal">T-F</th>
-                                <th class="px-3 py-2 text-center font-bold text-black">O</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100">
-                            <tr v-for="(team, index) in standings" :key="team.id" :class="{'border-l-4 border-l-[#008000]': index < 3}">
-                                <td class="px-2 py-3 text-center font-medium">{{ index + 1 }}</td>
-                                <td class="px-2 py-3 font-medium text-gray-800">{{ team.name }}</td>
-                                <td class="px-1 py-3 text-center text-gray-600">{{ team.played }}</td>
-                                <td class="px-1 py-3 text-center text-gray-600">{{ team.gf - team.ga }}</td>
-                                <td class="px-3 py-3 text-center font-bold text-black bg-gray-50">{{ team.points }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </main>
     </div>
     
-    <!-- Desktop blocker: faqat serverda (Netlify) ishlaydi, lokal faylda chiqmaydi -->
     <script>
     (function(){
         var isLocal = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
@@ -182,3 +259,5 @@
     <script src="app.js"></script>
 </body>
 </html>
+
+

@@ -26,3 +26,115 @@
 @keyframes phoneBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
 .mobile-app { max-width: 100%; min-height: 100vh; }
+
+.input-3d, input, select { background-color: #ffffff !important; color: #111827 !important; color-scheme: light; }
+/* TDTU Premium Animations & Glassmorphism */
+body {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    background-attachment: fixed;
+}
+
+.mobile-app {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Glassmorphism Card Effect */
+.glass-card, .bg-white {
+    background: rgba(255, 255, 255, 0.65) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 1.25rem !important; /* Ovalsimon burchaklar (20px) */
+    box-shadow: 0 8px 32px 0 rgba(0, 128, 0, 0.05) !important;
+    transition: all 0.3s ease;
+}
+
+.glass-card:active, .bg-white:active {
+    transform: scale(0.98);
+}
+
+/* Header Glass Effect */
+header.bg-\[\#008000\] {
+    background: rgba(0, 128, 0, 0.85) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Tabs Glass Effect */
+.bg-\[\#006400\] {
+    background: rgba(0, 100, 0, 0.7) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Smooth Slide & Fade In Animation for Tabs */
+.animate-fade-in {
+    animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Make tables blend with glass */
+table {
+    background: transparent !important;
+}
+th, td {
+    border-bottom-color: rgba(0,0,0,0.05) !important;
+}
+tr.bg-gray-50, .bg-gray-50 {
+    background: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Desktop Blocker overrides */
+#desktop-block {
+    background: linear-gradient(135deg, #052c16 0%, #064e3b 100%);
+}
+/* IQTISODCHILAR SAYTI - 3D INPUT/SELECT (Light/Green Edition) */
+.input-3d, input, select {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.8) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.9) !important;
+    border-radius: 1.5rem !important; /* 3D oval burchak */
+    box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.04), inset -3px -3px 8px rgba(255, 255, 255, 0.6) !important;
+    transition: all 0.4s ease;
+    color: #111827 !important;
+    padding: 0.75rem 1rem !important;
+    appearance: none; /* Native dizaynni ochirish */
+}
+
+.input-3d:focus, .input-3d.active, input:focus, select:focus {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 2px solid #008000 !important;
+    border-right: 2px solid rgba(0, 128, 0, 0.4) !important;
+    border-top: 1px solid rgba(0, 128, 0, 0.1) !important;
+    border-left: 1px solid rgba(0, 128, 0, 0.1) !important;
+    box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.05), inset -2px -2px 6px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 128, 0, 0.15) !important;
+    outline: none !important;
+}
+
+/* Select o'qi (strelkasi) 3D inputlarga yo'qolib qolmasligi uchun custom strelka qo'shamiz */
+select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23008000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 1rem top 50% !important;
+    background-size: 0.65rem auto !important;
+    padding-right: 2.5rem !important;
+}
+
