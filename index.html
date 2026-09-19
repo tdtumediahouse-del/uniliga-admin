@@ -169,6 +169,16 @@
         </main>
     </div>
     
+    <!-- Desktop blocker: faqat serverda (Netlify) ishlaydi, lokal faylda chiqmaydi -->
+    <script>
+    (function(){
+        var isLocal = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        var isMobile = window.innerWidth <= 480;
+        if (!isLocal && !isMobile) {
+            document.getElementById('desktop-block').classList.add('active');
+        }
+    })();
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
